@@ -1,0 +1,73 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+}
+
+header {
+  background-color: #FBFBFD;
+}
+
+nav {
+	width: 100%;
+	max-width: 900px;
+	margin: auto;
+	display: flex;
+	justify-content: space-between;
+	height: 60px;
+  align-items: center;  
+}
+
+.headerlist {
+	display: flex;
+	justify-content: flex-end;
+	/* align-items: flex-end; */
+	list-style-type: none;
+	gap: 50px;
+	padding: 0;
+	margin: 0;
+}
+.section1 {
+    display: flex;
+   justify-content: space-between;
+   gap:80px;
+}
+.container-left {
+    width: 100%;
+    max-width: 556px;
+}
+.container-right {
+  display: flex;
+  flex-wrap: wrap;
+  gap:40px 78px;
+} 
+main{
+    padding:132px 64px;
+}
+
+.item {
+  /* Remove lines below, they are only needed as placeholder!!! */
+  height: 76px;
+  width: 318px;
+  border:1px solid grey;
+  /* Remove lines above!!! */
+}
+
+/* .test {
+  height: 1000px;
+  background: url('./frame39.svg') no-repeat fixed center;
+  border: 1px solid red;
+}
+
+.test2 {
+  height: 1000px;
+  border: 1px solid green;
+
+}
+
+.test3 {
+  height: 1000px;
+  border: 1px solid blue;
+} */
