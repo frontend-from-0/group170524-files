@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Lesson 3</title>
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<header>
+			<nav class="nav">
+				<ul class="navlist">
+					<!-- Logo is usually added to web pages as a link to the home page -->
+					<li><a href="#">Home</a></li>
+					<li><a href="./about.html">About us</a></li>
+					<li><a href="./contact.html">Contact</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<main>
+			<h1>This is a main section</h1>
+			<section>This is the first section</section>
+
+			<section>
+				<!-- Class and id attributes can be added to all HTML elements -->
+				<form method="GET" action="#">
+					<fieldset>
+            <legend>Personal information</legend>
+						<label class="label-fullwidth" for="first-name">First name:</label>
+						<input type="text" id="first-name" name="first-name" required value="My name"/>
+
+						<label class="label-fullwidth" for="email">Email:</label>
+						<input type="email" id="email" name="email" placeholder="myname@website.com"/>
+
+						<label class="label-fullwidth" for="password">Password:</label>
+						<input type="password" id="password" name="password" />
+					</fieldset>
+					<br />
+					<!-- If you use radio inputs for the same value, all of them should have the same name -->
+					<input type="radio" id="html" name="fav_language" value="HTML" />
+					<label for="html">HTML</label><br />
+					<input type="radio" id="css" name="fav_language" value="CSS" />
+					<label for="css">CSS</label><br />
+					<input
+						type="radio"
+						id="javascript"
+						name="fav_language"
+						value="JavaScript"
+					/>
+					<label for="javascript">JavaScript</label>
+
+					<br />
+
+					<input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" />
+					<label for="vehicle1"> I have a bike</label><br />
+					<input type="checkbox" id="vehicle2" name="vehicle2" value="Car" />
+					<label for="vehicle2"> I have a car</label><br />
+					<input type="checkbox" id="vehicle3" name="vehicle3" value="Boat" />
+					<label for="vehicle3"> I have a boat</label>
+
+          <br>
+          <label for="message">Message</label>
+          <textarea id="message"></textarea>
+
+          <br>
+          <input type="submit" value="Send information">
+          <!-- <button type="submit"><img src="https://images.unsplash.com/photo-1716393763723-64e389f248fc?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"></button> -->
+          <input type="reset" value="Reset form">
+				</form>
+			</section>
+		</main>
+		<footer>
+			<nav class="nav">
+				<ul class="navlist__footer">
+					<!-- Logo is usually added to web pages as a link to the home page -->
+					<li><a href="#">Home</a></li>
+					<li><a href="./about.html">About us</a></li>
+					<li><a href="./contact.html">Contact</a></li>
+				</ul>
+			</nav>
+		</footer>
+	</body>
+</html>
