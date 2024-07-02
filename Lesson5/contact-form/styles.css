@@ -1,0 +1,31 @@
+* {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 32px;
+	background-color: #121212;
+	color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+	margin: 0;
+}
+
+h1 {
+	font-size: 128px;
+}
+
+.container {
+	min-height: 500px; /*TODO: Remove after content is added! */
+	max-width: 1000px;
+	border: 1px solid green;
+	/* Used to center element horizonally */
+	margin: 100px auto 0;
+	/* margin: 0 auto; */
+}
+
+.color-primary {
+  color: #676CE7;
+}

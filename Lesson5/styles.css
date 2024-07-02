@@ -1,0 +1,41 @@
+/* html {
+  font-size: 10px;
+} */
+
+body {
+  height: 100vh;
+}
+
+main {
+  height: 100%;
+}
+
+div {
+  width: 50%;
+  min-height: 50%;
+}
+
+/* Absolute unit
+  px,
+   (cm, pt, in)
+*/
+/* Relative units:
+- % (related to the parent element)
+- rem 
+- em
+- vh
+- vw
+
+*/
+
+.red {
+  background-color: #ff0000;
+}
+
+.green {
+  background-color: #00ff37;
+}
+
+.yellow {
+  background-color: #ffee00;
+}
