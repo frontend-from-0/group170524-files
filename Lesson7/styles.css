@@ -19,6 +19,22 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+.hero-bg {
+  position: relative;
+}
+
+.hero-img {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 0;
+}
+
+.nav-top, .hero {
+  z-index: 1;
+}
+
 .nav-top {
 	display: flex;
 	margin: 0 auto;
@@ -42,6 +58,7 @@ a {
 }
 
 .btn-primary-filled {
+  z-index: 1;
 	background-color: var(--color-primary);
 	border-radius: var(--border-radius);
 	color: var(--color-base);
@@ -59,8 +76,6 @@ a {
 }
 
 .hero {
-	position: relative;
-	background: url('./assets/designer_1.svg') no-repeat center center/cover;
 	min-height: 700px;
 	display: flex;
 	align-items: center;
