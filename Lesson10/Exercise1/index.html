@@ -4,29 +4,44 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="./styles/global.css" media="all"/>
+		<!-- If deivce size is specified in media attribute in the styles link, no need to specify media rule again in that CSS file. -->
+		<link rel="stylesheet" href="./styles/global.css" media="all" />
+		<link rel="stylesheet" href="./styles/desktop.css" media="all and (min-width: 1200px)" />
+		<link rel="stylesheet" href="./styles/mobile.css" media="all and (max-width: 767.98px)">
 		<title>Media queries exercise 1</title>
 	</head>
 	<body>
+		<main class="text-center">
+			<div>
+				<a href="https://google.com" class="btn btn-default">G</a>
+				<a href="https://google.com" class="btn btn-default">G</a>
+			</div>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi quaerat qui reiciendis perspiciatis dolorum sint vitae, consectetur recusandae doloremque ea voluptatem, quisquam quis, eaque possimus vero error natus tempore eos?</p>
+		</main>
+
 		<!-- Srcset attribute -  defines the set of images we want to use and their corresponding widths.
 			Sizes attribute - defines a set of media conditions (e.g., screen widths) and indicates what image size to use for each condition.
 			Src attribute - the fallback image source that will be used if the browser does not support the srcset attribute.
 		-->
-		<img
-		
-			srcset="./images/biker-480.jpg 480w, ./images/biker-800.jpg 800w"
-			sizes="(max-width: 600px) 480px,
-         800px"
+		<!-- The reason for img element not to load the small biker-480.jpg was the display and margin properties used for img element in CSS. I tried several different options and haven't found a good solution for centering the image on the large screen. So in this case I'd prefer using a picture element as it is more reliable and easier to use.
+  -->
+		<div class="img-container">
+			<img
+			srcset="./images/biker-480.jpg 480w, ./images/biker-800w.jpg 800w"
+			sizes="(max-width: 600px) 100vw,
+			800px"
 			src="./images/biker-800.jpg"
 			alt="A man riding a bike"
 		/>
+		</div>
+		
 		<!-- For pictures and (large) images we use jpg (jpeg) or webp -->
 		<!-- For logos - png or svg -->
 
-		<!-- <picture>
-      <source media="(max-width: 767.99px)" srcset="./images/img-small.jpg"/>
-      <source media="(min-width: 768px)" srcset="./images/img-regular.jpg"/>
-      <img src="./images/img-regular.jpg" alt="Some image description">
-    </picture> -->
+		<picture>
+			<source media="(max-width: 767.99px)" srcset="./images/img-small.jpg" />
+			<source media="(min-width: 768px)" srcset="./images/img-regular.jpg" />
+			<img src="./images/img-regular.jpg" alt="Some image description" />
+		</picture>
 	</body>
 </html>

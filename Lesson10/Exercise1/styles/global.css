@@ -2,10 +2,31 @@
   box-sizing: border-box;
 }
 
+body {
+  margin: 0;
+}
+
 a {
   text-decoration: none;
 }
 
 ul {
   list-style-type: none;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.btn {
+  min-width: 44px;
+  min-height: 16px;
+  display: inline-block;
+  margin: 10px;
+  padding: 10px;
+}
+
+.btn-default {
+  background-color: #0000005d;
+  color: #fff;
 }

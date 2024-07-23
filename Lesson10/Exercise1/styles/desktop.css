@@ -1,12 +1,4 @@
-* {
-  box-sizing: border-box;
-}
-
-img {
-  max-width: 100%;
-
-}
-
+/* This file would be only used for styles specific to desktop devices */
 /* 
 Recommended button and link sizes for mobile devices:
 - Minumum 16px (height) x 44px (width)
@@ -16,6 +8,9 @@ Font sizes for mobile devices:
 - 16px is recommended for normal text (paragraph elements)
 
 */
+
+
+
 
 
 /*
@@ -41,8 +36,38 @@ TODO:
 Create a simple media query that changes the background color of a webpage for each size stated above
 
 */
-/* Screen, print, speech, all */
-/* and, or, not, only - e.g. '@media only screen ...'
+/* Device types to use with media selector: Screen, print, speech, all */
+/* Words to use with media select: and, or, not, only - e.g. '@media only screen ...'
  */
 
  /* Genelde mobile, table, desktop ayriliyor - 768px - 1040px */
+
+
+ @media all and (max-width: 575.98px) {
+  body {
+    background-color: yellow;
+  } 
+}
+@media all and (min-width: 576px) and (max-width: 767.98px)  {
+  body {
+    background-color: pink;
+  } 
+}
+
+@media all and (min-width: 768px) and (max-width: 991.98px)  {
+  body {
+    background-color: blue;
+  }
+}
+
+@media all and (min-width: 992px) and (max-width: 1199.98px)  {
+  body {
+    background-color: red;
+  }
+}
+
+@media all and (min-width: 1200px)  {
+  body {
+    background-color: purple;
+  }
+}
