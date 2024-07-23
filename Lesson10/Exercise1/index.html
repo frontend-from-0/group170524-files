@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./styles/global.css" media="all"/>
+		<title>Media queries exercise 1</title>
+	</head>
+	<body>
+		<!-- Srcset attribute -  defines the set of images we want to use and their corresponding widths.
+			Sizes attribute - defines a set of media conditions (e.g., screen widths) and indicates what image size to use for each condition.
+			Src attribute - the fallback image source that will be used if the browser does not support the srcset attribute.
+		-->
+		<img
+		
+			srcset="./images/biker-480.jpg 480w, ./images/biker-800.jpg 800w"
+			sizes="(max-width: 600px) 480px,
+         800px"
+			src="./images/biker-800.jpg"
+			alt="A man riding a bike"
+		/>
+		<!-- For pictures and (large) images we use jpg (jpeg) or webp -->
+		<!-- For logos - png or svg -->
+
+		<!-- <picture>
+      <source media="(max-width: 767.99px)" srcset="./images/img-small.jpg"/>
+      <source media="(min-width: 768px)" srcset="./images/img-regular.jpg"/>
+      <img src="./images/img-regular.jpg" alt="Some image description">
+    </picture> -->
+	</body>
+</html>
