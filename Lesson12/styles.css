@@ -11,10 +11,11 @@ h1, h2, h3, h4, h5, h6, p:hover {
 }
 
 .header {
-  background-color: #eae4e4;
-  color: #888;
+  background-color: #545454;
+  color: #FFF;
   padding: 1em;
   text-align: center;
+  font-size: 24px;
 }
 
 .nav {
@@ -56,16 +57,9 @@ h1, h2, h3, h4, h5, h6, p:hover {
   display: flex;
 }
 
-.nav__item:first-of-type {
-  order:4;
-}
-.nav__item:last-of-type {
-  order:-1;
-}
-
 .nav__link {
   text-decoration: none;
-  color: #888;
+  color: #FFF;
 }
 
 .product__image {
@@ -123,11 +117,15 @@ h1, h2, h3, h4, h5, h6, p:hover {
 }
 
 .button {
-  background-color: #eae4e4;
+  background-color: #545454;
   color: #fff;
   border: none;
   cursor: pointer;
   border-radius: 5px;
+  min-width: 48px;
+  padding: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .text--small {
