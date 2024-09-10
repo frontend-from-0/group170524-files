@@ -3,25 +3,38 @@ Functions
 
 Functions are one of the fundamental building blocks of the language. They are reusable blocks of code that can be executed when needed. Functions encapsulate a set of statements and can be called or invoked to perform a specific task or calculation. 
 
-Function Declaration
+Anonymos Function Declaration 
 function (parameter1, parameter2) {
   return parameter1 * parameter2;
 };
 
 Named function:
-function multiplyTwoNumbers(parameter1, parameter2) {
+function multiplyTwoNumbers (parameter1, parameter2) {
   return parameter1 * parameter2;
 }
-multiplyTwoNumbers(1, 4);
+multiplyTwoNumbers(10, 40);
+multiplyTwoNumbers(1, 40);
 
 Function Expression
-const sumOfTwoNumber = function (parameter1, parameter2) {
-  return parameter1 * parameter2;
+const sumOfTwoNumbers = function (parameter1, parameter2) {
+  return parameter1 + parameter2;
 };
 
+sumOfTwoNumbers(10, 15);
+
 Arrow Function (introduced in ECMAScript 6 OR ES6)
-const greet = () => {
+Anonymus arrow function
+() => {
   console.log('Hello world');
+};
+
+Single line arrow function experession
+const greet = (name) =>  'Hello '+ name;
+greet('John');
+
+Multi line arrow function experession
+const greet = () => {
+  return 'Hello world';
 };
 
 greet();
@@ -32,6 +45,16 @@ greet();
 	return parameter1 * parameter2;
 })();
 
+// Global scope
+const NAME_ANOTHER_WORD = 'John';
+
+function greet(surname) {
+	return `52. Name in the function scope: ${NAME_ANOTHER_WORD} ${surname}`;
+}
+console.log(greet('Doe'));
+
+console.log('56. Name in the global scope', NAME_ANOTHER_WORD);
+
 // console.log(multiplyTwoNumbers(1, 4));
 
 /* 
@@ -40,6 +63,7 @@ Conditional statements (if...else, switch)
 Conditional statements in JavaScript are used to make decisions and execute different blocks of code based on certain conditions. They allow you to control the flow of your program and determine which code should be executed depending on whether a condition evaluates to true or false.
 
 if Statement
+
 if (condition) {
 
 }
@@ -70,17 +94,69 @@ switch (day) {
 }
 */
 
+const today = 'Tuesday';
+
+if (today === 'Tuesday') {
+	console.log('Today is Tuesday!');
+} else if (today === 'Tuesday') {
+	console.log('Today is Tuesday 🚀');
+} else {
+	console.log('Today is not Tuesday and not Sunday!');
+}
+
 // 1. Write a function that takes in a number and checks if it's even or odd using if else statement.
 
+function isEvenOrOdd(number) {
+	if (number % 2 === 0) {
+		return 'Even';
+	} else {
+		return 'Odd';
+	}
+}
+console.log(isEvenOrOdd(-27));
+console.log(isEvenOrOdd(52));
 
-// 2. Write a function that takes age as input. If the age is less than 18, print "Sorry, you are not old enough to vote". If the age is between 18 and 65 (inclusive), print "You are eligible to vote". If the age is greater than 65, print "You are a senior citizen".
-
-
+// 2. Write a function that takes age as input. If the age is less than 18, print
+// "Sorry, you are not old enough to vote". If the age is between 18 and 65 (inclusive),
+// print "You are eligible to vote". If the age is greater than 65, print "You are a senior citizen".
+function checkVotingEligebility(age) {
+	if (age < 18) {
+		return 'Sorry, you are not old enough to vote';
+	} else if (age >= 18 && age <= 65) {
+		// age >=18 AND age <=65 (Alternative to logical and is logical OR ||)
+		return 'You are eligible to vote';
+	} else {
+		return 'You are a senior citizen';
+	}
+}
+console.log(checkVotingEligebility(65));
+console.log(checkVotingEligebility(18));
+console.log(checkVotingEligebility(17));
+console.log(checkVotingEligebility(67));
 // 3. Write a function that asks the user to enter two numbers and checks if the first number is greater than, less than, or equal to the second number using if else statement.
 
+function compareNumbers(number1, number2) {
+	// You can skipp {} in if else statements if you only have *one line code* to execute in each case
+	if (number1 === number2) return 'Numbers are equal.';
+	else if (number1 < number2) return 'Number1 is less than Number2.';
+	else return 'Number1 is greater than Number2.';
+}
+
+console.log(compareNumbers(1, 50));
 
 // 4. Write a function that takes in a string and checks if the first letter is uppercase using if else statement.
+function isFirstLetterUpperCase(string) {
+	const firstLetter = string.charAt(0); // string[0]
+  if (string.length <= 0 || typeof string === 'String') return 'Invalid input value';
 
+	if (firstLetter === firstLetter.toUpperCase()) {
+		return true;
+	} else {
+		return false;
+	}
+}
+console.log(isFirstLetterUpperCase(''));
+console.log(isFirstLetterUpperCase('Write a function that'));
 
 // 5. Write a function that takes in a number and checks if it's positive, negative, or zero using if else statement.
 
