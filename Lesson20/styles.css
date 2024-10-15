@@ -1,0 +1,15 @@
+.button {
+  display: block;
+}
+
+.button--hidden {
+  display: none;
+}
+
+.color-red {
+  color: #ff0000;
+}
+
+.text-bold {
+  font-weight: 900;
+}
