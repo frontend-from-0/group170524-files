@@ -1,14 +1,16 @@
 // Exercise 1:
-// Given an array of numbers, filter out the even numbers.
-// Expected output: [1, 1, 2, 3, 3, 4, 5, 5, 5, 6, 9]
+// Given an array of numbers, sort the numbers in ascending order.
 const numbers = [3, 1, 4, 11, 5, 9, 2, 6, 5, 3, 5];
+const sortedNumbers=[...numbers].sort((a, b) => a - b);
+console.log(numbers,sortedNumbers);
 
-
+//
 // Exercise 2: Sorting Strings
 // Sort an array of strings in alphabetical order.
 // Expected output: ["apple", "banana", "grape", "orange", "pear"]
-const fruits = ["banana", "apple", "pear", "orange", "grape"];
-
+const fruits = ["banana", "apple", "ápp", "pear", "Orange", "grape"];
+const alphabeticalOrder = [...fruits].sort((a,b) => b.localeCompare(a));
+console.log(alphabeticalOrder);
 
 // Exercise 3: Descending Order
 // Sort an array of numbers in descending order.

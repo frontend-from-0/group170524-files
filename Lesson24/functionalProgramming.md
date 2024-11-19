@@ -1,3 +1,4 @@
+
 Functional programming is a programming paradigm that treats computation as the evaluation of mathematical functions and avoids changing state and mutable data. One of the core concepts of functional programming is working with higher-order functions, which can take other functions as arguments or return them as results.
 
 JavaScript provides several higher-order functions, such as .map() and .filter(), which are commonly used in functional programming. In this lesson, we'll explore these methods and understand how they can be used to manipulate arrays.
@@ -74,7 +75,7 @@ const outerFunction = (x) => {
   return innerFunction;
 };
 
-const addFive = outerFunction(5);
+const addFive = outerFunction(5); 
 console.log(addFive(3)); // Output: 8
 ```
 
@@ -102,6 +103,7 @@ console.log(composedFunction(7)); // Output: 14
 
 ```
 const add = (a) => (b) => a + b;
+
 const addFive = add(5);
 
 console.log(addFive(3)); // Output: 8
