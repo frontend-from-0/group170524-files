@@ -36,6 +36,7 @@ HTTPS methods:
 - DELETE
 
 GET request
+https://api.example.com - is a webaddress of the server
 fetch('https://api.example.com/data?name=John&surname=Doe')
   .then(response => response.json())
   .then(data => {
@@ -78,9 +79,9 @@ fetch(`https://api.unsplash.com/photos/random?count=10&client_id=${API_KEY}`)
 .catch(error => console.log(error));
 
 
-// // Same code using AJAX
-const xhr = new XMLHttpRequest();
-const url = `https://api.unsplash.com/photos/random?count=10&client_id=${API_KEY}`;
+// Same code using AJAX (old way of making API requests)
+// const xhr = new XMLHttpRequest();
+// const url = `https://api.unsplash.com/photos/random?count=10&client_id=${API_KEY}`;
 
 // xhr.onreadystatechange = function () {
 //   if (xhr.readyState === 4) {
@@ -93,6 +94,6 @@ const url = `https://api.unsplash.com/photos/random?count=10&client_id=${API_KEY
 //   }
 // };
 
-xhr.open('GET', url, true);
-xhr.send();
+// xhr.open('GET', url, true);
+// xhr.send();
 
