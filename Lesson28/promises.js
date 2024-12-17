@@ -48,22 +48,55 @@ const myPromise = new Promise((resolve, reject) => {
 });
 
 // Step 2: Using .then() to handle resolved Promise
-myPromise
-  .then((result) => {
-    console.log(result); // This code will execute if the Promise is resolved
-  })
-  .catch((error) => {
-    console.error(error); // This code will execute if the Promise is rejected
-  });
+// myPromise
+//   .then((result) => {
+//     console.log(result); // This code will execute if the Promise is resolved
+//   })
+//   .catch((error) => {
+//     console.error(error); // This code will execute if the Promise is rejected
+//   });
 
-console.log("Promise created. Waiting for it to resolve or reject...");
+// console.log("Promise created. Waiting for it to resolve or reject...");
 
 
 /* Asyc / await syntax for working with Promises */
 
 // Examples of making a function asyncronous
-// Function declaration
+async function returnMyPromiseResult () {
+  try {
+    const result = await myPromise;
+    console.log('Result of async operation: ', result);
+  } catch (error) {
+    console.error('Error in async operation: ', error);
+  } finally {
+    console.log('Async operation completed.');
+  }
+}
+
+returnMyPromiseResult();
+
+// Anonymus Function declaration
+
+// async function () {
+//   const result = await myPromise;
+//   console.log('Result of async operation: ', result);
+// }
+
+// document.getElementById('btn').addEventListener('click', async function () {
+//   const result = await myPromise;
+//   console.log('Result of async operation: ', result);
+// });
+
 // Function expression
+const myFunction = async function () {
+  const result = await myPromise;
+  console.log('Result of async operation: ', result);
+}
+
 // Arrow function
+const myArrowFunction = async () => {
+  const result = await myPromise;
+  console.log('Result of async operation: ', result);
+}
 
 // Try, catch, finally
