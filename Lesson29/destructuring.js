@@ -56,15 +56,13 @@ const person = {
 // const age = person.age;
 
 // With destructuring
-// const { name, age } = person;
+// const { age, name } = person;
 
 // console.log(name); // Alice
 // console.log(age);  // 30
 
 // Renaming Variables
-const { age: personAge, name } = person;
-// const age = person.age;
-// const name = person.name;
+// const { age: personAge, name } = person;
 
 // console.log(name); // Alice
 // console.log(personAge);  // 30
@@ -74,7 +72,7 @@ const { age: personAge, name } = person;
 // const { name: anotherPersonName, isStudent = false } = person;
 
 // console.log(anotherPersonName); // Alice
-// console.log(student);  // false
+// console.log(isStudent);  // false
 
 // Nested Objects
 
@@ -92,11 +90,11 @@ const personWithContactInfo = {
 };
 
 // const { 
-//   name: firstName,
+//   name,
 //   contact: { email, phone, address: {line1, postcode: postalCode} } 
 // } = personWithContactInfo;
 
-// console.log(firstName); // Dave
+// console.log(name); // Dave
 // console.log(email); // dave@example.com
 // console.log(phone); // 123456789
 // console.log(line1); // Kungstagatan 1
@@ -105,12 +103,16 @@ const personWithContactInfo = {
 
 
 // Rest Properties
-const { name: nameForRestExample, age: ageForRestExample, ...rest } = personWithContactInfo;
-console.log(nameForRestExample);
-console.log(ageForRestExample);
-console.log(rest);
+const { name, age, ...contact } = personWithContactInfo;
+console.log(name);
+console.log(age);
+console.log(contact);
 
 // In JS, ... is called 'rest operator'
+
+
+const initialArray = [1, 2, 3, 4, 5];
+const sortedArray = [...initialArray].sort();
 
 
 
