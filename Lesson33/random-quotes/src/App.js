@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
-import { logout } from "./auth";
+import { logout } from "./firebase/auth";
 import { UserPage } from "./components/UserPage";
 import { Home } from "./components/Home";
 import {Login} from "./components/Login";
@@ -64,8 +64,8 @@ function App() {
       {currentPage === "login" && <Login setCurrentPage={setCurrentPage} />}
       {currentPage === "register" && <Register setCurrentPage={setCurrentPage} />}
 
-      <h2>Upload quotes</h2>
-      <button onClick={() => uploadQuotesScript()}>Add all existing quotes</button>
+      {/* <h2>Upload quotes</h2>
+      <button onClick={() => uploadQuotesScript()}>Add all existing quotes</button> */}
     </div>
   );
 }

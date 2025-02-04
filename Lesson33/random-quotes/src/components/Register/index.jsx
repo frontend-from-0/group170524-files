@@ -1,6 +1,6 @@
 // src/components/Register.js
 import React, { useState } from "react";
-import { register } from "../../auth";
+import { register } from "../../firebase/auth";
 
 export const Register = ({ setCurrentPage }) => {
   const [email, setEmail] = useState("");

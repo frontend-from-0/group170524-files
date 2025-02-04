@@ -2,20 +2,19 @@ import { QuoteBox } from "../QuoteBox";
 import { Title } from "../Title";
 import { useState, useEffect } from "react";
 import { getDocs, collection} from "firebase/firestore";
-import { db } from "../../firebase-config";
-
+import {db} from '../../firebase/config';
 
 export const Home = () => {
   const [quotes, setQuotes] = useState([]);
   const [quoteIndex, setQuoteIndex] = useState(0);
   const getRandomQuoteIndex = () => Math.floor(Math.random() * quotes.length);
 
-  const moviesCollectionRef = collection(db, 'quotes');
+  const quotesCollectionRef = collection(db, 'quotes');
 
   useEffect(() => {
     const getQuotes = async () => {
       try {
-        const data = await getDocs(moviesCollectionRef);
+        const data = await getDocs(quotesCollectionRef);
         const quotes = data.docs.map(doc => doc.data());
         setQuotes(quotes);
       } catch (error) {
@@ -23,7 +22,7 @@ export const Home = () => {
       }
     };
     getQuotes();
-  }, []);
+  }, [quotesCollectionRef]);
 
   function handleNewQuoteClick() {
     setQuoteIndex(getRandomQuoteIndex());

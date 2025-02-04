@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { login } from "../../auth";
+import { login } from "../../firebase/auth";
 import "./styles.css";
 
 export const Login = ({ setCurrentPage }) => {

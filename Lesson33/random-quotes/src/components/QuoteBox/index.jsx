@@ -42,6 +42,7 @@ export function QuoteBox({ id, quote, author, onNewQuoteClick }) {
   }
 
   // TODO: only show the like and dislike buttons if the user is logged in
+  // TODO: On the quote in the Database, keep track of the total like count.
   return (
     <>
       <div>
