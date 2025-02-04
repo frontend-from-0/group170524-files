@@ -1,21 +1,24 @@
-import { useState, useEffect } from "react";
-import { getAuth, onAuthStateChanged } from "firebase/auth";
-import { logout } from "./firebase/auth";
+import { useState, useEffect, useContext } from "react";
+import { onAuthStateChanged } from "firebase/auth";
+import { logout, auth } from "./firebase/auth";
 import { UserPage } from "./components/UserPage";
 import { Home } from "./components/Home";
 import {Login} from "./components/Login";
 import {Register} from "./components/Register";
 import { uploadQuotesScript } from "./uploadQuotesScript";
+import {UserContext, UserDispatchContext, UserActionTypes} from "./UserContext";
 import "./App.css";
 
 function App() {
   const [currentPage, setCurrentPage] = useState("home");
-  const [user, setUser] = useState(null);
+  const user = useContext(UserContext);
+  const dispatch = useContext(UserDispatchContext);
 
+  // THE issue with the code below: I used a bad password so the user was not created. That's why logging in did not work.
   useEffect(() => {
-    const auth = getAuth();
     const unsubscribe = onAuthStateChanged(auth, (user) => {
-      setUser(user);
+      const {email, displayName, uid} = user;
+      dispatch({type: UserActionTypes.SetUser, payload: {email, name: displayName, id: uid}});
     });
 
     return unsubscribe;
@@ -27,6 +30,7 @@ function App() {
       setCurrentPage("home");
     } catch (error) {
       console.error("Error logging out:", error);
+      alert("Error logging out. Please try again.");
     }
   }
 
@@ -63,8 +67,8 @@ function App() {
       {currentPage === "user" && <UserPage />}
       {currentPage === "login" && <Login setCurrentPage={setCurrentPage} />}
       {currentPage === "register" && <Register setCurrentPage={setCurrentPage} />}
-
-      {/* <h2>Upload quotes</h2>
+{/* 
+      <h2>Upload quotes</h2>
       <button onClick={() => uploadQuotesScript()}>Add all existing quotes</button> */}
     </div>
   );

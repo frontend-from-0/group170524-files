@@ -22,7 +22,8 @@ export const Home = () => {
       }
     };
     getQuotes();
-  }, [quotesCollectionRef]);
+
+  }, []);
 
   function handleNewQuoteClick() {
     setQuoteIndex(getRandomQuoteIndex());

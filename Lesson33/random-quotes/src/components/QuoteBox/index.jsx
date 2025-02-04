@@ -1,43 +1,40 @@
-import { UserContext, UserDispatchContext } from "../../UserContext";
+import {
+  UserContext,
+  UserDispatchContext,
+  UserActionTypes,
+} from "../../UserContext";
 import { useContext } from "react";
+import { doc, setDoc, query, collection, where, getDocs } from "firebase/firestore";
+import { db } from "../../firebase/config";
 
 export function QuoteBox({ id, quote, author, onNewQuoteClick }) {
   const user = useContext(UserContext);
-  const setUser = useContext(UserDispatchContext);
+  const dispatch = useContext(UserDispatchContext);
 
-  function handleLike() {
-    setUser((prevState) => {
-      if (prevState.dislikedQuotes.includes) {
-        const updatedDislikedQuotes = prevState.dislikedQuotes.filter(
-          (dislikedQuoteId) => dislikedQuoteId !== id,
-        );
-        return {
-          ...prevState,
-          likedQuotes: [...prevState.likedQuotes, id],
-          dislikedQuotes: updatedDislikedQuotes,
-        };
-      }
-      return { ...prevState, likedQuotes: [...prevState.likedQuotes, id] };
-    });
-    // TODO: update the quote document in the database to reflect like count
+  const collectionReference = collection(db, "quotes");
+  async function handleLike() {
+    dispatch({ type: UserActionTypes.UpdateLikedQuotes, payload: { id } });
+    try {
+      const dbQuery = query(
+        collectionReference,
+        where("id", "==", id)
+      );
+
+      const querySnapshots = await getDocs(dbQuery);
+      if (querySnapshots.empty)  throw Error("Quote document is not found");
+
+      const currentQuoteDocument = querySnapshots.docs.map(doc => doc.data())[0];
+
+      const quoteDocRef = doc(db, "quotes", currentQuoteDocument.id);
+      await setDoc(quoteDocRef, { ...currentQuoteDocument, likedBy: [...currentQuoteDocument.likedBy, user.id] });
+    } catch (error) {
+      console.error("Error getting quotes:", error);
+    }
   }
+
+
   function handleDislike() {
-    setUser((prevState) => {
-      if (prevState.likedQuotes.includes) {
-        const updatedLikedQuotes = prevState.likedQuotes.filter(
-          (likedQuotesId) => likedQuotesId !== id,
-        );
-        return {
-          ...prevState,
-          dislikedQuotes: [...prevState.dislikedQuotes, id],
-          likedQuotes: updatedLikedQuotes,
-        };
-      }
-      return {
-        ...prevState,
-        dislikedQuotes: [...prevState.dislikedQuotes, id],
-      };
-    });
+    dispatch({ type: UserActionTypes.UpdateDislikedQuotes, payload: { id } });
     // TODO: update the quote document in the database to reflect like count
   }
 

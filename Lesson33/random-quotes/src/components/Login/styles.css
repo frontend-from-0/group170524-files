@@ -27,11 +27,15 @@
   border: none;
   border-radius: 3px;
   background-color: var(--primary-color);
-  color: white;
+  color: var(--primary-text);
   cursor: pointer;
 }
 
 .btn--primary:hover {
   background-color:var(--primary-dark-color);
   ;
+}
+
+.error {
+  color: var(--text-error);
 }

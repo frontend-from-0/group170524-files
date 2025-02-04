@@ -1,10 +1,11 @@
-// src/components/Register.js
 import React, { useState } from "react";
 import { register } from "../../firebase/auth";
 
 export const Register = ({ setCurrentPage }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+    const [error, setError] = useState(null);
+  
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -14,6 +15,7 @@ export const Register = ({ setCurrentPage }) => {
       setCurrentPage("home");
     } catch (error) {
       console.error("Error registering:", error);
+      setError("Error registering. Make sure to use password with at least 6 characters.");
     }
   };
 
@@ -46,6 +48,9 @@ export const Register = ({ setCurrentPage }) => {
         <button type="submit" className="btn--primary">
           Register
         </button>
+        <div className="error">
+          <p>{error}</p>
+        </div>
       </form>
     </>
   );

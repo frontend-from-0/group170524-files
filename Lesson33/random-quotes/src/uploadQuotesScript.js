@@ -8,7 +8,7 @@ export const uploadQuotesScript = () => {
   let counter = 0;
   quotes.forEach(async (quote) => {
     try {
-      await addDoc(quotesCollectionRef, { ...quote, likedBy: []});
+      await addDoc(quotesCollectionRef, { ...quote, likedBy: [], dislikedBy: []});
       counter++;
     } catch (error) {
       console.error("Error adding quote:", error);
