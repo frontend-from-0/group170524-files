@@ -51,7 +51,7 @@ function userReducer(state, action) {
 
 // HOC - Higher Order Component
 export const UserProvider = ({children }) => {
-  const [user, dispatch] = useReducer(userReducer, {});
+  const [user, dispatch] = useReducer(userReducer, {likedQuotes: [], dislikedQuotes: []});
 
   return (
     <UserContext.Provider value={user}>
