@@ -1,35 +1,39 @@
 import { useState, useEffect, useContext } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { logout, auth } from "./firebase/auth";
-import { UserPage } from "./components/UserPage";
-import { Home } from "./components/Home";
-import {Login} from "./components/Login";
-import {Register} from "./components/Register";
-import {UserContext, UserDispatchContext, UserActionTypes} from "./UserContext";
+import { AppRouter } from "./AppRouter";
+import {
+  UserContext,
+  UserDispatchContext,
+  UserActionTypes,
+} from "./UserContext";
+import { useNavigate } from "react-router";
+import { NavLink } from "react-router";
 import "./App.css";
 
 function App() {
-  const [currentPage, setCurrentPage] = useState("home");
+  const navigate = useNavigate();
   const user = useContext(UserContext);
   const dispatch = useContext(UserDispatchContext);
 
-  // THE issue with the code below: I used a bad password so the user was not created. That's why logging in did not work.
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
-        const {email, displayName, uid} = user;
-      dispatch({type: UserActionTypes.SetUser, payload: {email, name: displayName, id: uid}});
+        const { email, displayName, uid } = user;
+        dispatch({
+          type: UserActionTypes.SetUser,
+          payload: { email, name: displayName, id: uid },
+        });
       }
-      
     });
 
     return unsubscribe;
   }, []);
 
-  async function handleLogout () {
+  async function handleLogout() {
     try {
       await logout();
-      setCurrentPage("home");
+      navigate("/");
     } catch (error) {
       console.error("Error logging out:", error);
       alert("Error logging out. Please try again.");
@@ -38,37 +42,44 @@ function App() {
 
   return (
     <div className="App">
-      <nav className="nav--top">
-        <button onClick={() => setCurrentPage("home")} className="nav-btn">
-          Home
-        </button>
-        {user.email &&  user.name ? (
-          <>
-            <button onClick={() => setCurrentPage("user")} className="nav-btn">
-              User
-            </button>
-            <button onClick={handleLogout} className="nav-btn">
-              Logout
-            </button>
-          </>
-        ) : (
-          <>
-            <button onClick={() => setCurrentPage("login")} className="nav-btn">
-              Login
-            </button>
-            <button
-              onClick={() => setCurrentPage("register")}
-              className="nav-btn"
-            >
-              Register
-            </button>
-          </>
-        )}
+      <nav>
+        <ul className="nav__list">
+          <li>
+            <NavLink to="/" className="nav-btn" end>
+              Home
+            </NavLink>
+          </li>
+
+          {user.id ? (
+            <>
+              <li>
+                <NavLink to={"/user/settings"} className="nav-btn" end>
+                  Settings
+                </NavLink>
+              </li>
+              <li>
+                <button onClick={handleLogout} className="nav-btn">
+                  Logout
+                </button>
+              </li>
+            </>
+          ) : (
+            <>
+              <li>
+                <NavLink to="/user/login" className="nav-btn" end>
+                  Login
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/user/register" className="nav-btn" end>
+                  Register
+                </NavLink>
+              </li>
+            </>
+          )}
+        </ul>
       </nav>
-      {currentPage === "home" && <Home />}
-      {currentPage === "user" && <UserPage />}
-      {currentPage === "login" && <Login setCurrentPage={setCurrentPage} />}
-      {currentPage === "register" && <Register setCurrentPage={setCurrentPage} />}
+      <AppRouter />
 
       {/* <h2>Upload quotes</h2>
       <button onClick={() => uploadQuotesScript()}>Add all existing quotes</button> */}
