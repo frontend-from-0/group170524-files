@@ -52,6 +52,11 @@ function App() {
 
           {user.id ? (
             <>
+            <li>
+                <NavLink to={"/quotes/new"} className="nav-btn" end>
+                  Add quote
+                </NavLink>
+              </li>
               <li>
                 <NavLink to={"/user/settings"} className="nav-btn" end>
                   Settings
