@@ -12,6 +12,10 @@ const StyledDiv = styled('div')`
 	padding: 20px;
 `;
 
+const greeting = (name) => `Hello ${name}`;
+greeting('John');
+
+
 const StyledTypography = styled(Typography)`
 	color: var(--color-default);
 `;

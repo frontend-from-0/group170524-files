@@ -41,3 +41,14 @@ module.exports = {
   // other configurations
 };
 `
+
+Then, add imports to your main CSS file (index.css):
+```
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+```
+
+I recommend using https://headlessui.com/ as component library together with TailwindCSS.
+And for the icons, I like https://phosphoricons.com/ (https://github.com/phosphor-icons/react)
