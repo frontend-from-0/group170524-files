@@ -1,17 +1,20 @@
 import React, { useState } from "react";
 import { login } from "../../firebase/auth";
+import { useNavigate } from "react-router";
 import "./styles.css";
 
-export const Login = ({ setCurrentPage }) => {
+export const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
+
 
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
       await login(email, password);
-      setCurrentPage("home");
+      navigate("/");
     } catch (error) {
       console.error("Error logging in:", error);
       setError("Error logging in. Please try again.");

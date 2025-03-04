@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react";
+import { useEffect, useContext } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { logout, auth } from "./firebase/auth";
 import { AppRouter } from "./AppRouter";

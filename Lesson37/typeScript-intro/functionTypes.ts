@@ -17,7 +17,7 @@ greet('Jane');
 // };
 
 
-let logMessage: (message: string, userId?: string) => void = function (
+let logMessage = function (
 	message: string,
 	userId?: string
 ): void {

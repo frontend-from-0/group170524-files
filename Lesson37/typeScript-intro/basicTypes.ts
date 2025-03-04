@@ -20,7 +20,7 @@ const person: [string, number] = ["Alice", 30]; // A tuple of string and number
 // Enums are a way of giving more friendly names to sets of numeric values.
 enum Color {Red, Green, Blue, Yellow};
 
-let primaryColor: Color = Color.Green;
+let primaryColor: Color = Color.Blue;
 primaryColor = Color.Yellow;
 
 console.log('primaryColor', primaryColor);
@@ -56,7 +56,7 @@ const n: null = null;  // if we want to re-set / remove value
 
 // The `never` type represents the type of values that never occur. For instance, it is the return type for a function expression or an arrow function expression that always throws an exception or one that never returns.
 
-function error(message: string): never {
+function error (message: string): never {
   throw new Error(message);
 }
 

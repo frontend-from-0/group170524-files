@@ -1,21 +1,24 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { register } from "../../firebase/auth";
+import { useNavigate } from "react-router";
 
-export const Register = ({ setCurrentPage }) => {
+export const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-    const [error, setError] = useState(null);
-  
+  const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   const handleRegister = async (e) => {
     e.preventDefault();
 
     try {
       await register(email, password);
-      setCurrentPage("home");
+      navigate("/");
     } catch (error) {
       console.error("Error registering:", error);
-      setError("Error registering. Make sure to use password with at least 6 characters.");
+      setError(
+        "Error registering. Make sure to use password with at least 6 characters.",
+      );
     }
   };
 
@@ -55,4 +58,3 @@ export const Register = ({ setCurrentPage }) => {
     </>
   );
 };
-

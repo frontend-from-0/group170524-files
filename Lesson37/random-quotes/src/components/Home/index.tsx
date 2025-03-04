@@ -3,11 +3,12 @@ import { Title } from "../Title";
 import { useState, useEffect } from "react";
 import { getDocs, collection} from "firebase/firestore";
 import {db} from '../../firebase/config';
+import { Quote } from "../../models/quote";
 
 export const Home = () => {
-  const [quotes, setQuotes] = useState([]);
-  const [quoteIndex, setQuoteIndex] = useState(0);
-  const getRandomQuoteIndex = () => Math.floor(Math.random() * quotes.length);
+  const [quotes, setQuotes] = useState<Quote[]>([]);
+  const [quoteIndex, setQuoteIndex] = useState<number>(0);
+  const getRandomQuoteIndex = ():number => Math.floor(Math.random() * quotes.length);
 
   const quotesCollectionRef = collection(db, 'quotes');
 
@@ -15,7 +16,7 @@ export const Home = () => {
     const getQuotes = async () => {
       try {
         const data = await getDocs(quotesCollectionRef);
-        const quotes = data.docs.map(doc => doc.data());
+        const quotes = data.docs.map(doc => doc.data()) as Quote[];
         setQuotes(quotes);
       } catch (error) {
         console.error("Error getting quotes:", error);

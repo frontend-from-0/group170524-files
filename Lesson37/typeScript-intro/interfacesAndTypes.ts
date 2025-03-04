@@ -1,5 +1,5 @@
 interface User {
-  id: number;
+  id: ID;
   name: string;
   age?: number;
   address?: Address;
@@ -15,15 +15,15 @@ interface AdminUser extends User {
 const user3: AdminUser = { id: 1, name: "Jane", superAdmin: false };
 
 
-type ID = string | number;
 
 interface Address {
   line1: string;
-  line2:string;
+  line2?: string;
   city: string;
-  zip: number;
+  zip: string;
 }
 
+type ID = string | number;
 
 type Person = {
   id: ID;
@@ -40,6 +40,7 @@ Main differences between interfaces and types:
 
 Extending and Intersection
 Interfaces use the extends keyword to inherit from other interfaces, while types use intersection (&) to combine multiple types
+*/
 
 interface Animal {
   name: string;
@@ -51,32 +52,40 @@ interface Dog extends Animal {
 type AnimalType = {
   name: string;
 }
-type DogType = AnimalType & {
+
+type Breed = {
   breed: string;
 }
 
-Union Types
-Types can represent union types directly, while interfaces cannot.
+type DogType = AnimalType & Breed;
+
+const animal: AnimalType = { name: "Duck" };
+
+const puddle: Breed = { breed: "Puddle" };
+
+const dog : DogType = { name: "Dog", breed: "Poodle" };
+
+// Union Types
+// Types can represent union types directly, while interfaces cannot.
 
 type Status = "pending" | "approved" | "rejected";
 
 
-Primitive Types
-Types can be used to create aliases for primitive types, while interfaces cannot.
+// Primitive Types
+// Types can be used to create aliases for primitive types, while interfaces cannot.
 
 type Age = number;
 
 
-Use Cases
+// Use Cases
 
-Use interfaces when:
-- Defining object shapes or class structures
-- You need declaration merging
-- Working with object-oriented design patterns
+// Use interfaces when:
+// - Defining object shapes or class structures
+// - You need declaration merging
+// - Working with object-oriented design patterns
 
-Use types when:
-- Creating union or intersection types
-- Working with primitive types
-- Needing computed properties
-- Creating complex types (mapped types, conditional types, etc.)
-*/
+// Use types when:
+// - Creating union or intersection types
+// - Working with primitive types
+// - Needing computed properties
+// - Creating complex types (mapped types, conditional types, etc.)
