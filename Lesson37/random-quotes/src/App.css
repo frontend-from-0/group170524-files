@@ -1,0 +1,46 @@
+
+
+.App {
+  text-align: center;
+}
+
+.nav__list {
+  display: flex;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 4px solid var(--primary-color);
+
+  list-style-type: none;
+  gap: 1.75rem;
+}
+
+.nav-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--text-color);
+  text-decoration: none;
+  padding: 6px 14px;
+  cursor: pointer;
+}
+
+.nav-btn:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--primary-color);
+}
+
+.nav-btn.active {
+  color: var(--primary-color);
+}
+
+button {
+  min-width: 100px;
+  padding: 6px 14px;
+  border: none;
+  background-color: var(--primary-color);
+  margin: 10px;
+  border-radius: 5px;
+  color: var(--primary-text);
+}
