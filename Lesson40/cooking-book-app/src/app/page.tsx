@@ -2,9 +2,15 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default async function HomePage() {
-  const data = await fetch(
-    "https://www.themealdb.com/api/json/v1/1/filter.php?i=chicken_breast",
-  );
+  const data: Response = await new Promise((resolve) => {
+    setTimeout(() =>
+      resolve(
+        fetch(
+          "https://www.themealdb.com/api/json/v1/1/filter.php?i=chicken_breast",
+        )),
+      5000,
+      );
+  });
   const recipes = await data.json();
 
   return (
