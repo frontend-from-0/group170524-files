@@ -66,7 +66,7 @@ const NewRecipeForm = () => {
         }
       </Field>
 
-      <button type="submit">Save recipe</button>
+      <button type="submit" data-testid="submit-btn">Save recipe</button>
     </Form>
   );
 };
