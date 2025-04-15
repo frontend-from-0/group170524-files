@@ -1,0 +1,194 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loading page Snapshot renders loading page unchanged 1`] = `
+<div>
+  <div
+    class="text-center my-8"
+  >
+    <h1>
+      Home Page
+    </h1>
+    <ul
+      class="max-w-6xl mx-auto flex flex-wrap gap-6 justify-between"
+      data-testid="placeholder-list"
+    >
+      <li
+        class="max-w-3xs my-4"
+        data-testid="placeholder-item"
+      >
+        <div
+          class="w-48 h-6 bg-gray-100 my-2 mx-auto rounded"
+        />
+        <div
+          class="w-3xs h-64 bg-gray-100"
+        />
+      </li>
+      <li
+        class="max-w-3xs my-4"
+        data-testid="placeholder-item"
+      >
+        <div
+          class="w-48 h-6 bg-gray-100 my-2 mx-auto rounded"
+        />
+        <div
+          class="w-3xs h-64 bg-gray-100"
+        />
+      </li>
+      <li
+        class="max-w-3xs my-4"
+        data-testid="placeholder-item"
+      >
+        <div
+          class="w-48 h-6 bg-gray-100 my-2 mx-auto rounded"
+        />
+        <div
+          class="w-3xs h-64 bg-gray-100"
+        />
+      </li>
+      <li
+        class="max-w-3xs my-4"
+        data-testid="placeholder-item"
+      >
+        <div
+          class="w-48 h-6 bg-gray-100 my-2 mx-auto rounded"
+        />
+        <div
+          class="w-3xs h-64 bg-gray-100"
+        />
+      </li>
+      <li
+        class="max-w-3xs my-4"
+        data-testid="placeholder-item"
+      >
+        <div
+          class="w-48 h-6 bg-gray-100 my-2 mx-auto rounded"
+        />
+        <div
+          class="w-3xs h-64 bg-gray-100"
+        />
+      </li>
+      <li
+        class="max-w-3xs my-4"
+        data-testid="placeholder-item"
+      >
+        <div
+          class="w-48 h-6 bg-gray-100 my-2 mx-auto rounded"
+        />
+        <div
+          class="w-3xs h-64 bg-gray-100"
+        />
+      </li>
+      <li
+        class="max-w-3xs my-4"
+        data-testid="placeholder-item"
+      >
+        <div
+          class="w-48 h-6 bg-gray-100 my-2 mx-auto rounded"
+        />
+        <div
+          class="w-3xs h-64 bg-gray-100"
+        />
+      </li>
+      <li
+        class="max-w-3xs my-4"
+        data-testid="placeholder-item"
+      >
+        <div
+          class="w-48 h-6 bg-gray-100 my-2 mx-auto rounded"
+        />
+        <div
+          class="w-3xs h-64 bg-gray-100"
+        />
+      </li>
+      <li
+        class="max-w-3xs my-4"
+        data-testid="placeholder-item"
+      >
+        <div
+          class="w-48 h-6 bg-gray-100 my-2 mx-auto rounded"
+        />
+        <div
+          class="w-3xs h-64 bg-gray-100"
+        />
+      </li>
+      <li
+        class="max-w-3xs my-4"
+        data-testid="placeholder-item"
+      >
+        <div
+          class="w-48 h-6 bg-gray-100 my-2 mx-auto rounded"
+        />
+        <div
+          class="w-3xs h-64 bg-gray-100"
+        />
+      </li>
+      <li
+        class="max-w-3xs my-4"
+        data-testid="placeholder-item"
+      >
+        <div
+          class="w-48 h-6 bg-gray-100 my-2 mx-auto rounded"
+        />
+        <div
+          class="w-3xs h-64 bg-gray-100"
+        />
+      </li>
+      <li
+        class="max-w-3xs my-4"
+        data-testid="placeholder-item"
+      >
+        <div
+          class="w-48 h-6 bg-gray-100 my-2 mx-auto rounded"
+        />
+        <div
+          class="w-3xs h-64 bg-gray-100"
+        />
+      </li>
+      <li
+        class="max-w-3xs my-4"
+        data-testid="placeholder-item"
+      >
+        <div
+          class="w-48 h-6 bg-gray-100 my-2 mx-auto rounded"
+        />
+        <div
+          class="w-3xs h-64 bg-gray-100"
+        />
+      </li>
+      <li
+        class="max-w-3xs my-4"
+        data-testid="placeholder-item"
+      >
+        <div
+          class="w-48 h-6 bg-gray-100 my-2 mx-auto rounded"
+        />
+        <div
+          class="w-3xs h-64 bg-gray-100"
+        />
+      </li>
+      <li
+        class="max-w-3xs my-4"
+        data-testid="placeholder-item"
+      >
+        <div
+          class="w-48 h-6 bg-gray-100 my-2 mx-auto rounded"
+        />
+        <div
+          class="w-3xs h-64 bg-gray-100"
+        />
+      </li>
+      <li
+        class="max-w-3xs my-4"
+        data-testid="placeholder-item"
+      >
+        <div
+          class="w-48 h-6 bg-gray-100 my-2 mx-auto rounded"
+        />
+        <div
+          class="w-3xs h-64 bg-gray-100"
+        />
+      </li>
+    </ul>
+  </div>
+</div>
+`;
