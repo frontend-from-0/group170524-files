@@ -26,7 +26,7 @@
 
 **How to Learn It**  
 - **Static Site Hosting:** Start by deploying a simple static site to a platform like Netlify or Vercel.  
-- **Serverless Functions:** Experiment with writing small “lambda functions” or “serverless functions” to handle tasks such as form submissions or basic API endpoints.  
+- **Serverless Functions:** Experiment with writing small “lambda functions” or “serverless functions” to handle tasks such as form submissions or basic API endpoints.
 - **Monitoring & Logging:** Learn how to track function execution, errors, and performance.
 
 ---
